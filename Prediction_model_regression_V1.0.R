@@ -9,13 +9,13 @@ library(patchwork)
 Start_date <- Sys.Date()
 
 #Declare duration of prediction
-Duration <- 182
+duration <- 182
 
 #Declare value to lag prediction from sys.date (max 27)
 prediction_lag <- 0
 
 #Declare prediction quantile and limits of plot ribbon
-prediction_quantile <- 0.10
+prediction_percentile <- 0.10
 upper_limit <- 0.15
 lower_limit <- 0.05
 
@@ -28,7 +28,7 @@ cms <- (60 * 60 * 24) / (28568 * 1000 * 1000)
 #*****************************NTS CALCULATION***********************************
 
 #Set the sequence of dates for the Duration
-dates <- seq(Start_date-prediction_lag, by = "day", length.out = Duration + prediction_lag)
+dates <- seq(Start_date-prediction_lag, by = "day", length.out = duration + prediction_lag)
 
 #Exclude the additional day if the year is leap year
 dates <- dates[format(dates, "%m-%d") != "02-29"]
@@ -314,7 +314,7 @@ print(plot_TS)
 
 # Calculate the 10th and 90th percentiles based on the median
 perc_low_vals <- apply(result_matrix, 2, quantile, prob = lower_limit, na.rm = TRUE)
-predict_vals <- apply(result_matrix, 2, quantile, prob = prediction_quantile, na.rm = TRUE)
+predict_vals <- apply(result_matrix, 2, quantile, prob = prediction_percentile, na.rm = TRUE)
 mean_vals <- apply(result_matrix, 2, mean, na.rm = TRUE)
 perc_high_vals <- apply(result_matrix, 2, quantile, prob = upper_limit, na.rm = TRUE)
 

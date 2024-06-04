@@ -5,17 +5,13 @@ The hydraulic model model is intended for Great Slave Lake water level predictio
 # Input Section
 Contains definition of model parameters. The following parameters can be defined by the user:
 
-Duration
-Sets the duration of simulation
+Duration - Sets the duration of simulation
 
-Prediction_lag
-Lag of simulation start date in days. Setting at 0 starts simulation from current date. Can be set up to 27, which will start simulation 27 days before current date and overlay real-time observations on the final plot.
+Prediction_lag - Lag of simulation start date in days. Setting at 0 starts simulation from current date. Can be set up to 27, which will start simulation 27 days before current date and overlay real-time observations on the final plot.
 
-Prediction_percentile
-Sets the prediction percentile for final plot. Value range between 0 and 1.
+Prediction_percentile - Sets the prediction percentile for final plot. Value range between 0 and 1.
 
-upper_limit & lower_limit
-Sets the percentiles of prediction envelope. Value range between 0 and 1.
+upper_limit & lower_limit - Set the percentiles of prediction envelope. Value range between 0 and 1.
 
 # NTS Calculation Section
 In this section, the date range of historic data is set. Discharge and water level historic observations are downloaded from Hydat. Daily water level change is calculated. Conversion to flow is performed and outlet is added to calculate Residual Net Total Supply (NTS). Daily NTS values are arranged in a matrix with each row representing a year from the historic time-series and columns containing NTS values for the relevant day of prediction period.

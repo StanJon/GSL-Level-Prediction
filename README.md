@@ -1,6 +1,6 @@
-# GSL-Level-Prediction
+# GSL_hydraulic_model
 
-The hydraulic model model is intended for Great Slave Lake water level prediction. Historic water level and discharge observations are used to estimate potential time-series Residual Net Total Supply (NTS). Residual NTS is applied to lake storage and monthly stage-discharge relationships are fitted to historic observations and used to predict the discharge. Pool Level Routing method is used to calculate water level on a daily time step. The model is divided into the following sections:
+The hydraulic model model is intended for Great Slave Lake water level prediction. Historic water level and discharge observations are used to estimate Residual Net Total Supply (NTS) time-series. Residual NTS is applied to lake storage. Monthly stage-discharge relationships are fitted to historic observations and used to predict the discharge. Pool Level Routing method is used to calculate water level on a daily time step. The model is divided into the following sections:
 
 # Input Section
 Contains definition of model parameters. The following parameters can be defined by the user:
